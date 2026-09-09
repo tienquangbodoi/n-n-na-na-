@@ -1,0 +1,29 @@
+# =================================================================
+# DANH SÁCH THƯ VIỆN DỰ ÁN QUẢN LÝ CHI TIÊU (CÀN KHÔN LINH THẠCH CÁC)
+# =================================================================
+
+# Web Framework & ASGI Server
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+
+# Xử lý form-data & upload ảnh/hóa đơn OCR
+python-multipart>=0.0.12
+
+# Xác thực người dùng, JWT & mã hóa mật khẩu
+PyJWT>=2.9.0
+bcrypt>=4.2.0
+
+# Đọc cấu hình từ file .env
+python-dotenv>=1.0.1
+
+# Trợ lý AI Khí Linh Tiên Trí & Quét Hóa Đơn (Google Gemini API)
+google-generativeai>=0.8.0
+
+# Giới hạn tần suất gọi API (Rate Limiting chống spam)
+slowapi>=0.1.9
+
+# Đọc & xuất dữ liệu báo cáo Excel (.xlsx)
+openpyxl>=3.1.5
+
+# HTTP Client cho Test Suite tự động & async requests
+httpx>=0.27.0
