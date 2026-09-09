@@ -1,0 +1,6 @@
+main.py
+*.py
+requirements.txt
+Dockerfile
+app.db
+__pycache__/
