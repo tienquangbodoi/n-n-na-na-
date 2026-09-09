@@ -1,17 +1,10 @@
 {
-    "builds": [
+    "buildCommand": "cd frontend && npm install && npm run build",
+    "outputDirectory": "frontend/dist",
+    "rewrites": [
         {
-            "src": "index.html",
-            "use": "@vercel/static"
-        }
-    ],
-    "routes": [
-        {
-            "handle": "filesystem"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/index.html"
+            "source": "/(.*)",
+            "destination": "/index.html"
         }
     ]
 }
