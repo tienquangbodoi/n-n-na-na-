@@ -2046,8 +2046,11 @@ export default {
 
     const iconOptions = ['🍕','🛍️','🚗','💵','🎁','🏠','💊','📚','🎮','☕','🍜','🎬','🏋️','✈️','📱','👕','🎵','🐾','🔧','📦']
 
-    // ─── AXIOS CONFIG ─────────────
-    const api = axios.create({ baseURL: '' })
+    // ─── AXIOS & API CONFIG ─────────────
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL !== undefined
+      ? import.meta.env.VITE_API_BASE_URL
+      : (import.meta.env.DEV ? '' : 'https://quan-ly-chi-tieu-63np.onrender.com')
+    const api = axios.create({ baseURL: API_BASE_URL })
     api.interceptors.request.use(config => {
       if (token.value) config.headers.Authorization = `Bearer ${token.value}`
       return config
@@ -3216,7 +3219,7 @@ export default {
 
       chatLoading.value = true
       try {
-        const response = await fetch('/api/ai/chat', {
+        const response = await fetch(`${API_BASE_URL}/api/ai/chat`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
